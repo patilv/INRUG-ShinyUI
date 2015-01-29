@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\nlibrary(\"leaflet\")\nshinyUI(fluidPage(\n  fluidRow(\n    column(3,\n           checkboxGroupInput(\"CrimeType\", label = h3(\"Crime Type\"), \n                              choices = list(\"Assault\" = \"Assault\", \"Burglary\" = \"Burglary\", \"Vehicle Prowl\" = \"Vehicle Prowl\"),\n                              selected = \"Assault\"),\n           hr(),\n           leafletOutput(\"L1\", width = 1800, height = 800))\n  )))\n",
+    "created" : 1422479305035.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1920465795",
+    "id" : "ABE6EB04",
+    "lastKnownWriteTime" : 1420572620,
+    "path" : "C:/Users/patil.GONZAGA/Dropbox/Reverything/GUSecurity/shinyleaflet/ui.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

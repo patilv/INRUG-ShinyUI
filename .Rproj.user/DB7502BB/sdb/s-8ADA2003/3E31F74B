@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\n\nshinyUI(fluidPage(\n  tags$h2(\"Building a Shiny App\"),\n  fluidRow(\n      column(3,\n             h5(\"Subsetting the iris data\"), \n             p(\"Slide to select range of values. Default position of sliders cover the entire range of these variables\"),\n            \n              sliderInput(\"Sepal.Length\", label = \"Sepal.Length\", min = min(iris$Sepal.Length), \n                         max = max(iris$Sepal.Length),value=c(min(iris$Sepal.Length),max(iris$Sepal.Length))),\n             \n              sliderInput(\"Sepal.Width\", label = \"Sepal.Width\", min = min(iris$Sepal.Width), \n                         max = max(iris$Sepal.Width), value = c(min(iris$Sepal.Width),max(iris$Sepal.Width))),\n             \n             \n             sliderInput(\"Petal.Length\", label = \"Petal.Length\", min = min(iris$Petal.Length), \n                         max = max(iris$Petal.Length), value = c(min(iris$Petal.Length),max(iris$Petal.Length))),\n             \n             \n             sliderInput(\"Petal.Width\", label = \"Petal.Width\", min = min(iris$Petal.Width), \n                         max = max(iris$Petal.Width), value = c(min(iris$Petal.Width),max(iris$Petal.Width))),\n             \n             h5(\"Inputs for scatter plot\"),\n             selectInput(\"xvar\", \"x-variable:\", choices=names(iris[,-5])),\n             selectInput(\"yvar\", \"y-variable:\", choices=names(iris[,-5]),selected = names(iris[2])),\n            \n              h5(\"Input for box plot\"),\n              selectInput(\"dvar\", \"Distribution of which variable for box plot?\", choices=names(iris[,-5]),selected = names(iris[3]))#,\n             # submitButton(\"Update View\", icon(\"refresh\"))\n             \n      ),\n   \n    \n    fluidRow(\n      column(5, \n             HTML(\"<h5>Summary of Subsetted Data</h5>\"),\n             verbatimTextOutput(\"summary\"),\n             \n             HTML(\"<br><br><h5>Data</h5>\"),\n             dataTableOutput(outputId=\"subsetdata\")),\n      \n      column(4, plotOutput(\"scatterplot\"),\n             plotOutput(\"boxplot\"))\n    )\n    \n  )))",
+    "created" : 1422388079826.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2048429981",
+    "id" : "3E31F74B",
+    "lastKnownWriteTime" : 1422386578,
+    "path" : "C:/Users/patil.GONZAGA/Dropbox/Reverything/INRUG-ShinyTalk/INRUG-ShinyFinal/ui.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

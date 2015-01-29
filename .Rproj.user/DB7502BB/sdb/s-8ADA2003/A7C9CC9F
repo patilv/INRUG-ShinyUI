@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\nlibrary(ggplot2)\n\nshinyServer(function(input, output) {\n\n  dataset=reactive(iris[(iris$Sepal.Length>=input$Sepal.Length[1] & iris$Sepal.Length<=input$Sepal.Length[2]&\n                            iris$Sepal.Width>=input$Sepal.Width[1] & iris$Sepal.Width<=input$Sepal.Width[2]&\n                               iris$Petal.Length>=input$Petal.Length[1] & iris$Petal.Length<=input$Petal.Length[2]&\n                                  iris$Petal.Width>=input$Petal.Width[1] & iris$Petal.Width<=input$Petal.Width[2]),])\n                            \n  \n    output$subsetdata <- renderDataTable(\n    dataset(),options=list(pageLength=10))\n  \n  \n  output$summary <- renderPrint(\n    summary(dataset())\n  )\n  \n  output$scatterplot=renderPlot(ggplot(dataset(),aes_string(x=input$xvar, y=input$yvar,color=\"Species\"))+ geom_point()+\n    ggtitle(\"Scatter Plot\")\n    )\n  \n  output$boxplot=renderPlot(ggplot(dataset(),aes_string(x=\"Species\",y=input$dvar))+ geom_boxplot()+\n      ggtitle(\"Box Plot\")\n  )\n  \n})\n  ",
+    "created" : 1422388083923.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3291161005",
+    "id" : "A7C9CC9F",
+    "lastKnownWriteTime" : 1422382877,
+    "path" : "C:/Users/patil.GONZAGA/Dropbox/Reverything/INRUG-ShinyTalk/INRUG-ShinyFinal/server.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
