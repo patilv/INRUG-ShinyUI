@@ -8,7 +8,7 @@ shinyUI(fluidPage(
            sliderInput("Sepal.Width", label = "Sepal.Width", min = min(iris$Sepal.Width), 
                        max = max(iris$Sepal.Width), value = c(min(iris$Sepal.Width),max(iris$Sepal.Width))),
            
-                      sliderInput("Petal.Length", label = "Petal.Length", min = min(iris$Petal.Length), 
+          sliderInput("Petal.Length", label = "Petal.Length", min = min(iris$Petal.Length), 
                        max = max(iris$Petal.Length), value = c(min(iris$Petal.Length),max(iris$Petal.Length))),
            
            sliderInput("Petal.Width", label = "Petal.Width", min = min(iris$Petal.Width), 
